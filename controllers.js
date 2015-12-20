@@ -19,6 +19,7 @@ app.controller('ContactController', function ($scope, $http) {
                     $scope.submitButtonDisabled = true;
                     $scope.resultMessage = data.message;
                     $scope.result='bg-success';
+                    $scope.contactform.$setPristine();
                 } else {
                     $scope.submitButtonDisabled = false;
                     $scope.resultMessage = data.message;
