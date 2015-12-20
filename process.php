@@ -16,6 +16,7 @@ if ( ! empty($errors)) {
   $data['errors'] = $errors;
   $data['messageError'] = 'Please check the fields in red';
 } else {
+  
   // if there are no errors, return a message
   $data['success'] = true;
   $data['messageSuccess'] = 'Hey! Thanks for reaching out. I will get back to you soon';

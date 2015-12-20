@@ -19,6 +19,9 @@
         }
             
         </style>
+          <script src="js/angular.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
     </head>
     <body ng-app="websiteApp">
         <form ng-submit="submitForm()" ng-controller="FormController" novalidate>
@@ -32,5 +35,6 @@
   <div ng-class="{'submissionMessage' : submission}" ng-bind="submissionMessage"></div>
 </form>
     </body>
-    <script src="js/script.js"></script>
+    
+  
 </html>
