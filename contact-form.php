@@ -14,13 +14,13 @@ if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['i
 
     //create an instance of PHPMailer
     $mail = new PHPMailer();
-
+    $mail->isHTML(true); 
     $mail->From = $_POST['inputEmail'];
     $mail->FromName = $_POST['inputName'];
     $mail->AddAddress('pateldeep.cse@gmail.com'); //recipient 
     $mail->Subject = $_POST['inputSubject'];
-    $mail->Body = "Name: " . $_POST['inputName'] . "\r\n\r\nDepartment: " . $_POST['inputSelect']. "\r\n\r\nMessage: " . stripslashes($_POST['inputMessage']);
-
+    $mail->Body = "<h1>Name: </h1><span style='background-color:rgba(0,0,0,.6);color:white;padding:5px'>" . $_POST['inputName'] . "</span>\r\n\r\n<h1>Department: </h1><span style='padding:5px;background-color:rgba(0,0,0,.6);color:white'>" . $_POST['inputSelect']. "</span>\r\n\r\n<div style='background-color:rgba(100,212,145,.4);color:gray;padding:10px' ><h1>Message: </h1>" . stripslashes($_POST['inputMessage'])."</div>";
+   
     if (isset($_POST['ref'])) {
         $mail->Body .= "\r\n\r\nRef: " . $_POST['ref'];
     }
