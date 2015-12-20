@@ -19,7 +19,7 @@ if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['i
     $mail->FromName = $_POST['inputName'];
     $mail->AddAddress('pateldeep.cse@gmail.com'); //recipient 
     $mail->Subject = $_POST['inputSubject'];
-    $mail->Body = "Name: " . $_POST['inputName'] . "\r\n\r\nMessage: " . stripslashes($_POST['inputMessage']). "\r\n\r\nMessage: " . $_POST['inputSelect'];
+    $mail->Body = "<h1>Name: " . $_POST['inputName'] . "</h1>\r\n\r\n<h1>Department: " . $_POST['inputSelect']. "</h1>\r\n\r\n<h1>Message: " . stripslashes($_POST['inputMessage'])."</h1>";
 
     if (isset($_POST['ref'])) {
         $mail->Body .= "\r\n\r\nRef: " . $_POST['ref'];
