@@ -270,7 +270,10 @@ td { vertical-align: top; }
 .clearfix:after { clear: both; }
 .clearfix { *zoom: 1; }
 
-
+body {
+    background:url(../img/ptn.png);
+    color: #666
+}
 
 /* ==|== print styles =======================================================
    Print styles.
@@ -290,4 +293,16 @@ td { vertical-align: top; }
   @page { margin: 0.5cm; }
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3 { page-break-after: avoid; }
+}
+
+.mainSVG{
+    width: 30vw;
+    display: block;
+    margin: 25px auto;
+    min-width: 300px;
+   /*-webkit-filter:drop-shadow(0px 0px 100px rgb(255, 233, 209));
+    filter: drop-shadow(0px 0px 100px rgb(255, 233, 209))*/
+}
+.mainSVG img {
+    width: 100%;
 }
