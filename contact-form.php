@@ -3,10 +3,10 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 require_once 'phpmailer/PHPMailerAutoload.php';
 
-if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['inputSubject']) && isset($_POST['inputMessage'])) {
+if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['inputSubject']) && isset($_POST['inputMessage']) && isset($_POST['inputSelect'])) {
 
     //check if any of the inputs are empty
-    if (empty($_POST['inputName']) || empty($_POST['inputEmail']) || empty($_POST['inputSubject']) || empty($_POST['inputMessage'])) {
+    if (empty($_POST['inputName']) || empty($_POST['inputEmail']) || empty($_POST['inputSubject']) || empty($_POST['inputMessage']) || empty($_POST['inputSelect'])) {
         $data = array('success' => false, 'message' => 'Please fill out the form completely.');
         echo json_encode($data);
         exit;
@@ -19,7 +19,7 @@ if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['i
     $mail->FromName = $_POST['inputName'];
     $mail->AddAddress('pateldeep.cse@gmail.com'); //recipient 
     $mail->Subject = $_POST['inputSubject'];
-    $mail->Body = "Name: " . $_POST['inputName'] . "\r\n\r\nMessage: " . stripslashes($_POST['inputMessage']);
+    $mail->Body = "Name: " . $_POST['inputName'] . "\r\n\r\nMessage: " . stripslashes($_POST['inputMessage']). "\r\n\r\nMessage: " . $_POST['inputSelect'];
 
     if (isset($_POST['ref'])) {
         $mail->Body .= "\r\n\r\nRef: " . $_POST['ref'];
