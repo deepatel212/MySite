@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <style>
+        .error {
+          background-color: rgba(255, 0, 0, 0.2);
+        }
+        .submissionMessage {
+          background-color: rgba(255,255,255, 0.2);
+          border-radius: 5px;
+          padding: 12px;
+          text-align: center;
+          display: block;
+          box-shadow: 0 0 2px white;
+          width: 60%;
+        }
+            
+        </style>
+    </head>
+    <body ng-app="websiteApp">
+        <form ng-submit="submitForm()" ng-controller="FormController" novalidate>
+  <label for="name">Name</label>
+  <input type="text" name="name" ng-model="formData.name" ng-class="{'error' : errorName}"><br/>
+  <label for="email">E-mail</label>
+  <input type="email" name="email" ng-model="formData.email" ng-class="{'error' : errorEmail}"><br/>
+  <label for="message">Message</label>
+  <textarea name="message" ng-class="{'error' : errorTextarea}" ng-model="formData.message" cols="30" rows="10"></textarea><br/>
+  <input type="submit" value="Send!" name="submit">
+  <div ng-class="{'submissionMessage' : submission}" ng-bind="submissionMessage"></div>
+</form>
+    </body>
+    <script src="js/script.js"></script>
+</html>
